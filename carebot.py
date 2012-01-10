@@ -41,7 +41,6 @@ corrections = [
 class StreamListener(tweepy.StreamListener):
     def on_status(self, status):
         global lastTweetAt # Hrmmm, come on python
-        print(status.text)
         now = time()
         if now - lastTweetAt < throttle:
             # Too soon since the last tweet
@@ -65,7 +64,6 @@ class StreamListener(tweepy.StreamListener):
                 random.choice(greetings) + " " + random.choice(corrections)
             api.update_status(message, status.id)
             lastTweetAt = now
-            print("=== Tweeted!")
         except tweepy.TweepError as error:
             print("Tweet error", e.response, e.reason)
 
