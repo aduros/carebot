@@ -27,7 +27,7 @@ me = api.me()
 print("Running as " + me.screen_name)
 
 expression = "could care less"
-throttle = 2 * 60
+throttle = 1.5 * 60
 lastTweetAt = 0
 
 greetings = [ "Hello!", "Hi!", "Hiya!", "Hey there!", "Ahoy!", "Howdy!" ]
